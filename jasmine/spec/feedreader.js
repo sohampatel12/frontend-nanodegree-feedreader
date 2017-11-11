@@ -47,6 +47,17 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        function checkDefinedName(i) {
+            it("have a defined and non-empty names (feed " + i + ")", function() {
+                expect(allFeeds[i].name).toBeDefined();
+                expect(allFeeds[i].name).not.toEqual('');
+            });
+        }
+        // Iterates for each object
+        for (var i = 0, len = allFeeds.length; i < len; i++) {
+            checkDefinedName(i);
+        }
+
     });
 
 
