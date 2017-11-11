@@ -111,7 +111,7 @@ $(function() {
 
         // tests that there is at least one entry in feed.
         it('should be called and contain at least one feed.', function() {
-            expect($('.entry').length).toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
