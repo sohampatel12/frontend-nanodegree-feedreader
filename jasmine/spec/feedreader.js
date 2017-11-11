@@ -93,6 +93,14 @@ $(function() {
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function() {
+
+        // beforeEach allows for use of asynchronous loadFeed().
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                done();
+            });
+        });
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -100,6 +108,12 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+        // tests that there is at least one entry in feed.
+        it('should be called and contain at least one feed.', function() {
+            expect($('.entry').length).toBeGreaterThan(0);
+        });
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
